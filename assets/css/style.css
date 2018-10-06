@@ -30,6 +30,10 @@ h1 h2{
     display: table;
 }
 
+.RLBoxes{
+    display: inline-table;
+}
+
 #contentBody{
     position: fixed;
     top: 30%;
@@ -58,15 +62,13 @@ h1 h2{
 }
 
 #scoreDiv{
-    height:50%;
     width: 100%;
-    display:table;
+    display:auto;
     top: 150px;
     margin-left: 20px;
 }
 
 #instructionDiv{
-    height: 50%;
     width: 100%;
     margin-left: 20px;
 }

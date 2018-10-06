@@ -46,7 +46,12 @@ document.addEventListener("keydown", function(e){
         var sDiv = document.getElementById("tries")
         lives--;
         var triesMessage = "Tries left: " + lives;
+        var rejLetters= document.getElementById("rejects");
+        var RLBox = document.createElement("div");
         sDiv.innerHTML = triesMessage;
+        RLBox.innerHTML= e.key;
+        RLBox.classList.add("RLetterBoxes")
+        rejLetters.appendChild(RLBox)
         console.log("last one!");
     }
         
