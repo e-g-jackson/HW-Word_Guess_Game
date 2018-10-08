@@ -30,8 +30,8 @@ h1 h2{
     display: table;
 }
 
-.RLBoxes{
-    display: inline-table;
+.RLetterBoxes{
+    display: inline-block;
 }
 
 #contentBody{
@@ -63,7 +63,7 @@ h1 h2{
 
 #scoreDiv{
     width: 100%;
-    display:auto;
+    display: block;
     top: 150px;
     margin-left: 20px;
 }

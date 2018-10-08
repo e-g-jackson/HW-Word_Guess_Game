@@ -5,7 +5,8 @@ var wordPool = ["philip johnson","antoni gaudi", "alvar aalto","eero saarinen","
 var selector = Math.floor((Math.random() * 4));
 var word = wordPool[selector];
 var wordLength = word.length;
-var lives = 6;
+var lives = 10;
+var tally = 0;
 console.log(word);
 console.log(wordLength);
 
@@ -20,40 +21,65 @@ for( i = 0 ; i < wordLength; i++){
     gDiv.appendChild(letterBox);
 };
 
+
 //Keypress Listener
 document.addEventListener("keydown", function(e){
-    console.log(e.key);
+    console.log("you pressed: " + e.key);
+    var match = false;
+    //for loop
     for( i = 0; i < wordLength; i++){
         var mark = word.charAt([i]);
-        var shortWordLength = wordLength - 1; 
+        var shortWordLength = wordLength - 1;
         console.log(mark);
-        console.log
-        
-    if (e.key == mark){
-        var transform = document.getElementById("LB" + [i]);
-        lives++;
-        var triesMessage = "Tries left: " + lives;
-        transform.innerHTML = mark;
-        console.log("looks great!");
-        
-    }
 
-    else if(e.key != mark && [i] < shortWordLength){
-        console.log("nope");
-    }
+            if ( ([i] < shortWordLength) && (e.key === mark) ){
+                var transform = document.getElementById("LB" + [i]);
+                match = true;
+                tally++;
+                transform.innerHTML = mark;
+                console.log("looks great!");
+            }
 
-    else if(e.key != mark && [i] == shortWordLength){
-        var sDiv = document.getElementById("tries")
-        lives--;
-        var triesMessage = "Tries left: " + lives;
-        var rejLetters= document.getElementById("rejects");
-        var RLBox = document.createElement("div");
-        sDiv.innerHTML = triesMessage;
-        RLBox.innerHTML= e.key;
-        RLBox.classList.add("RLetterBoxes")
-        rejLetters.appendChild(RLBox)
-        console.log("last one!");
-    }
+            else if ( ( [i] < shortWordLength) && (e.key != mark || match == false) ){
+                console.log("Nope. Keep looking.");
+            }
+
+            else if ( ( [i] == shortWordLength) && (e.key === mark) ){
+                var transform = document.getElementById("LB" + [i]);
+                match = true;
+                tally++;
+                transform.innerHTML = mark;
+                console.log("looks great(final)!");
+                return match;
+            }
+
+            else if( ([i] == shortWordLength) && (match === false) ) {
+                var sDiv = document.getElementById("tries");
+                lives--;
+                var triesMessage = "Tries left: " + lives;
+                var rejLetters= document.getElementById("rejects");
+                var RLBox = document.createElement("div");
+                sDiv.innerHTML = triesMessage;
+                RLBox.innerHTML= e.key;
+                RLBox.classList.add("RLetterBoxes");
+                rejLetters.appendChild(RLBox);
+                console.log("no match found");
+                break;
+            }
+
+           //inside forloop 
+        }
+        //outside forloop
+        console.log("tally = " + tally);
+        if ( tally === shortWordLength + 1){
+            console.log("tally = " + tally + "!")
+            alert("You Win!")
+        }
+        else if ( lives === 0 ){
+            alert("Sorry, You Lost!")
+            lives = 1;
+        };
         
-    }
+        
 });
+
