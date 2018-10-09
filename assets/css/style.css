@@ -22,6 +22,7 @@ h1 h2{
     margin: 10px;
     font-size: 40px;
     vertical-align: middle;
+    /* border: yellow 1px dotted; */
 }
 
 .clearfix{
@@ -42,17 +43,26 @@ h1 h2{
     display: flex;
     width:80%;
     height: 50%;
+    /* border:hotpink 1px dotted; */
 }
 
 #gameDiv{
-    background-color:white;
-    color: black;
+    /* border: 1px white solid; */
+    color: white;
     font-size: 20px;
     width:70%;
-    height: auto;
+    height: 150px;
     display: flex;
     top: 150px;
     float:left;
+}
+
+#display{
+    display: block;
+    width: 70%;
+    height: auto;
+    /* border: red 1px solid; */
+    float: left;
 }
 
 #sideBar{
@@ -71,4 +81,17 @@ h1 h2{
 #instructionDiv{
     width: 100%;
     margin-left: 20px;
+}
+
+#ArchImg{
+    width: 100%;
+    height: auto;
+}
+
+#ResultText{
+    font-weight: bold;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
