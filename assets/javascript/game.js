@@ -9,12 +9,14 @@ var wordLength = word.length;
 var lives = 10;
 var tally = 0;
 var rejectedLetters = [];
-console.log(word);
-console.log(wordLength);
+var endGame = false
+// console.log(word);
+// console.log(wordLength);
 
 var fxn = function (tally, lives){    
-    while ( tally === wordLength){
-        console.log("tally = " + tally + "!")
+    while ( tally === wordLength && endGame === false){
+        endGame = true;
+        // console.log("tally = " + tally + "!")
         tally = 0;
         lives = 10;
         var display = document.getElementById("display");
