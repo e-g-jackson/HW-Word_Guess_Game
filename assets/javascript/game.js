@@ -1,6 +1,6 @@
 //List of Possible Answers
 var wordPool = ["philip johnson","antoni gaudi", "alvar aalto","eero saarinen","louis kahn","zaha hadid"];
-var imgLink = ["Philip_Johnson.jpg","Antoni_Gaudi.jpg","Alvar_Aalto.jpg","Eero_Saarinen.jpg","Louis_Kahn.jpg","Zaha_Hadid.jpg"]
+var imgLink = ["Philip_Johnson.jpg","Antoni_Gaudi.jpg","Alvar_Aalto.jpg","eero_saarinen.jpg","Louis_Kahn.jpg","Zaha_Hadid.jpg"]
 //Randomized Selection
 var selector = Math.floor((Math.random() * wordPool.length));
 var word = wordPool[selector];
