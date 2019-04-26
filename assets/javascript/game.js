@@ -31,16 +31,22 @@ var fxn = function (){
         pic.id = "ArchImg";
         pic.setAttribute("src", linkImg);
         pic.setAttribute("alt", "Architecture Picture");
+        pic.setAttribute("style", "margin-right: auto; margin-left: auto;")
         display.appendChild(result);
         display.appendChild(pic);
         //replace instructiondiv with button????
         var iDiv = document.getElementById('instructionDiv');
+        var sDiv = document.getElementById('scoreDiv');
+        var dDiv = document.getElementById('display')
         var restartButton = document.createElement("button")
+        dDiv.setAttribute("style", "display: grid; margin-left: auto; margin-right: auto;")
         iDiv.innerHTML = "";
+        sDiv.innerHTML = "";
         restartButton.innerHTML = "RESET";
         restartButton.setAttribute("id", "restartButton")
+        restartButton.setAttribute("style", "width: 25%; padding: 15px 32px; background-color: #333333; color: #ffffff; margin-right: auto; margin-left: auto; margin-top: 20px;")
         restartButton.onclick = resetPage
-        iDiv.append(restartButton)
+        dDiv.append(restartButton)
         return tally;
     }
     //lose
